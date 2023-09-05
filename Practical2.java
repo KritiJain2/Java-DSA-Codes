@@ -5,6 +5,17 @@ public class Practical2 {
     public static int max_noe;
     public static Scanner sc = new Scanner(System.in);
 
+    public static int[] inputArray(){
+        System.out.print("Enter the number of elements in the array : ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Now enter the array :");
+        for(int i = 0; i<n; i++){
+            arr[i] = sc.nextInt();
+        }
+        return arr;
+    }
+
     public static void binarySearch(int[] arr, int s, int e, int element){
         if(s>e){
             System.out.println("No element found");
@@ -111,8 +122,10 @@ public class Practical2 {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1,2,21,4,34,56,7,9,10,0,0,0,0,0,0,0,0,0,0,0};
-        noe = 9;
+        int[] arr = new int[20];
+        int[] arr2 = inputArray();
+        System.arraycopy(arr2, 0, arr, 0, arr2.length);
+        noe = arr2.length;
         max_noe = 20;
         System.out.println("The array has " + noe +" elements.\n What operation do wish to perform on the array : 1. Insert  2. Delete  3. Transverse  4. Search  5. Sort  6. Exit");
         int choice = sc.nextInt();
